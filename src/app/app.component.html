@@ -1,11 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <h1>Recipe Box for {{month}}/{{day}}/{{year}}</h1>
+  <h2>{{currentFocus}}</h2>
+  <ul>
+    <li *ngFor="let currentRecipe of recipes">{{currentRecipe.description}} <button (click)="viewRecipe()">View Recipe</button></li>
+  </ul>
+
+<div *ngIf="selectedTask">
+<h2>{{selectedRecipe.description}}</h2>
+<p>Recipe Viewed? {{selectedRecipe.viewed}}</p>
+<button (click)="hideRecipe()">Hide Recipe</button>
+<img width="200" alt="Angular Logo" src="https://mk0theadventurexqwh1.kinstacdn.com/wp-content/uploads/Lo-Mein-1-2-600x900-1.jpg">
+<h5>Ingredients:</h5>
+  <ul>
+    <li>8 ounces thin lo mein noodles</li>
+    <li>1 tablespoon peanut oil </li>
+    <li>1 carrot, julienned </li>
+    <li>1/2 head napa cabbage, sliced thin </li>
+    <li>1/2 onion, sliced </li>
+    <li>1/4 cup chicken broth </li>
+    <li>1/4 cup low-sodium soy sauce</li>
+    <li>1 teaspoon sesame oil</li>
+    <li>Sliced green onions, for topping</li>
+  </ul>
+<h5>Directions:</h5>
+  <ol>
+    <li>Bring a pot of water to a boil and cook the noodles according to the package directions. Drain and set aside.</li>
+    <li>Heat a skillet over medium-high heat and add the peanut oil. Add the carrots, cabbage and onions and cook for 1 minute. Add the chicken broth, soy sauce and sesame oil, then toss in the noodles. Top with sliced green onions.</li>
+  </ol>
 </div>
-<h2>Here are some links to help you start: </h2>
+
+
+
 <ul>
   <li>
     <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
@@ -17,4 +43,3 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
-
